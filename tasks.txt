@@ -1,0 +1,7 @@
+cadastrar minhas perguntas
+login no facebook
+botoes de resposta das perguntas e salvar essas respostas
+capacidade de responder as perguntas
+respostas salvas por usuário para usuario
+usuario capaz de criar suas perguntas personalizadas
+

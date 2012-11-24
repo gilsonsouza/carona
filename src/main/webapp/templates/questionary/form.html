@@ -1,0 +1,119 @@
+<div class="row">
+    <div class="span6">
+        <div class="well">
+            <form class="form-horizontal" id="questionForm">
+                <fieldset>
+                    <legend>questionary</legend>
+
+                                            <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.question1"> Ask </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.question1" 
+                                id="questionary.question1" 
+                                ng-model="questionary.question1" />
+                            </div>
+                        </div>
+                                            <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.answer1"> Answ1 </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.answer1" 
+                                id="questionary.answer1" 
+                                ng-model="questionary.answer1" />
+                            </div>
+                        </div>
+                        
+                                                                    <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.question2"> Ask </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.question2" 
+                                id="questionary.question2" 
+                                ng-model="questionary.question2" />
+                            </div>
+                        </div>
+                                            <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.answer2"> Answ1 </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.answer" 
+                                id="questionary.answer2" 
+                                ng-model="questionary.answer2" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.question3"> Ask </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.question3" 
+                                id="questionary.question3" 
+                                ng-model="questionary.question3" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.answer3"> Answ1 </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.answer3" 
+                                id="questionary.answer3" 
+                                ng-model="questionary.answer3" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.question4"> Ask </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.question4" 
+                                id="questionary.question4" 
+                                ng-model="questionary.question4" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.answer4"> Answ1 </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.answer4" 
+                                id="questionary.answer4" 
+                                ng-model="questionary.answer4" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.question5"> Ask </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.question5" 
+                                id="questionary.question5" 
+                                ng-model="questionary.question5" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="questionary.answer5"> Answ1 </label>
+                            <div class="controls">
+                                <input type="text" name="questionary.answer5" 
+                                id="questionary.answer5" 
+                                ng-model="questionary.answer5" />
+                            </div>
+                        </div>
+                    
+                    <div class="form-actions">
+                        <div class="pull-right">
+                            <button class="btn btn-primary"
+                                ng-click="create(questionary)"
+                                ng-hide="question.id">Create</button>
+                            <button class="btn btn-primary" 
+                                ng-click="update(questionary)" 
+                                ng-show="question.id">Update</button>
+                            <a href="#/questionaries" class="btn">Cancel</a>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="span6"></div>
+</div>
+
+

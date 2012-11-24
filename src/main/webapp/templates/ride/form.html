@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="span6">
+        <div class="well">
+            <form class="form-horizontal" id="rideForm">
+                <fieldset>
+                    <legend>ride</legend>
+
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="ride.route"> Rota </label>
+                            <div class="controls">
+                                <input type="text" name="ride.route" 
+                                id="ride.route" 
+                                ng-model="ride.route" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="ride.driver"> Driver </label>
+                            <div class="controls">
+                                <input type="text" name="ride.driver" 
+                                id="ride.driver" 
+                                ng-model="ride.driver" />
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="ride.passengerLimit"> Limite Passageiro </label>
+                            <div class="controls">
+                                <input type="text" name="ride.passengerLimit" 
+                                id="ride.passengerLimit" 
+                                ng-model="ride.passengerLimit" />
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="ride.price"> Preço </label>
+                            <div class="controls">
+                                <input type="text" name="ride.price" 
+                                id="ride.price" 
+                                ng-model="ride.price" />
+                            </div>
+                        </div>
+                    
+                    <div class="form-actions">
+                        <div class="pull-right">
+                            <button class="btn btn-primary"
+                                ng-click="create(ride)"
+                                ng-hide="ride.id">Create</button>
+                            <button class="btn btn-primary" 
+                                ng-click="update(ride)" 
+                                ng-show="ride.id">Update</button>
+                            <a href="#/rides" class="btn">Cancel</a>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="span6"></div>
+</div>
+
+
