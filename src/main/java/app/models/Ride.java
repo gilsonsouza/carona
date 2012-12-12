@@ -1,17 +1,72 @@
 package app.models;
 
+import javax.persistence.Embeddable;
 import app.controllers.RideController;
 import br.com.caelum.vraptor.restfulie.relation.RelationBuilder;
 
 @javax.persistence.Entity
+@Embeddable
 public class Ride extends Entity {
 	
 	private String route;
 	private String driver;
+	private String street1;
+	private String street2;
+	private String street3;
+	private String destiny;
+	private String ridedays;
 	private String passenger;
 	private String passengerLimit;
 	private String price;
+	
+	public String getRidedays() {
+		return ridedays;
+	}
 
+
+	public void setRidedays(String ridedays) {
+		this.ridedays = ridedays;
+	}
+
+
+	public String getStreet1() {
+		return street1;
+	}
+
+
+	public void setStreet1(String street1) {
+		this.street1 = street1;
+	}
+
+
+	public String getStreet2() {
+		return street2;
+	}
+
+
+	public void setStreet2(String street2) {
+		this.street2 = street2;
+	}
+
+
+	public String getStreet3() {
+		return street3;
+	}
+
+
+	public void setStreet3(String street3) {
+		this.street3 = street3;
+	}
+
+
+	public String getDestiny() {
+		return destiny;
+	}
+
+
+	public void setDestiny(String destiny) {
+		this.destiny = destiny;
+	}
 	
 	public String getRoute() {
 		return route;

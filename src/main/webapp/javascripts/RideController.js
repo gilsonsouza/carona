@@ -2,10 +2,14 @@ angular.module('RideModule', []).
     config(['$routeProvider', function($routeProvider) {
     $routeProvider.
     	when('/riderequests', { templateUrl: '/templates/riderequest/list.html', controller: RideIndexController }).
-    	when('/rides', { templateUrl: '/templates/ride/list.html', controller: RideIndexController }).
+    	when('/passengerrides', { templateUrl: '/templates/passengerride/list.html', controller: PassengerRideIndexController }).
+    	when('/passengerrides/new', {templateUrl: '/templates/passengerride/form.html', controller: PassengerRideCreationController}).
+        when('/passengerrides/:resourceId/edit', {templateUrl: '/templates/passengerride/form.html', controller: PassengerRideEditController}).
+        when('/passengerrides/:resourceId', {templateUrl: '/templates/passengerride/details.html', controller: PassengerRideDetailsController}).
+        when('/rides', { templateUrl: '/templates/ride/list.html', controller: RideIndexController }).
         when('/rides/new', {templateUrl: '/templates/ride/form.html', controller: RideCreationController}).
         when('/rides/:resourceId/edit', {templateUrl: '/templates/ride/form.html', controller: RideEditController}).
-        when('/rides/:resourceId', {templateUrl: '/templates/ride/details.html', controller: RideDetailsController}).
+        when('/rides/:resourceId', {templateUrl: '/templates/ride/ridedetails.html', controller: RideDetailsController}).
         otherwise({redirectTo: '/rides'});
 }]);
 
@@ -16,7 +20,7 @@ var RideController = function($scope, $http, $location) {
 	$scope.destroy = function(resource) {
 		if (confirm("Are you sure?")) {
 			$http(resource.links.destroy).success(function() {
-				$scope.questionaries = _.reject($scope.questions, function(element) {
+				$scope.rides = _.reject($scope.rides, function(element) {
 					return element.id === resource.id;
 				});
 			}).error($scope.error);
