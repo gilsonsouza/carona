@@ -10,7 +10,7 @@ angular.module('RideModule', []).
         when('/rides/new', {templateUrl: '/templates/ride/form.html', controller: RideCreationController}).
         when('/rides/:resourceId/edit', {templateUrl: '/templates/ride/form.html', controller: RideEditController}).
         when('/rides/:resourceId', {templateUrl: '/templates/ride/ridedetails.html', controller: RideDetailsController}).
-        otherwise({redirectTo: '/rides'});
+        otherwise({redirectTo: '/'});
 }]);
 
 
