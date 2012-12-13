@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="span6">
+        <div class="well">
+            <form class="form-horizontal" id="passengerrideForm">
+                <fieldset>
+                    <legend>passengerride</legend>
+
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="passengerride.route"> Rota </label>
+                            <div class="controls">
+                                <input type="text" name="passengerride.route" 
+                                id="passengerride.route" 
+                                ng-model="passengerride.route" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="passengerride.origin"> Rua de partida </label>
+                            <div class="controls">
+                                <input type="text" name="passengerride.origin" 
+                                id="passengerride.origin" 
+                                ng-model="passengerride.origin" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="passengerride.destiny"> Rua de Destino </label>
+                            <div class="controls">
+                                <input type="text" name="passengerride.destiny" 
+                                id="passengerride.destiny" 
+                                ng-model="passengerride.destiny" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="passengerride.ridedays"> Dias que far‡ esta rota: </label>
+                            <div class="controls">
+                                <input type="text" name="passengerride.ridedays" 
+                                id="passengerride.ridedays" 
+                                ng-model="passengerride.ridedays" />
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label" 
+                                for="passengerride.passenger"> Passageiro </label>
+                            <div class="controls">
+                                <input type="text" name="passengerride.passenger" 
+                                id="passengerride.passenger" 
+                                ng-model="passengerride.passenger" />
+                            </div>
+                        </div>
+                    
+                    <div class="form-actions">
+                        <div class="pull-right">
+                            <button class="btn btn-primary"
+                                ng-click="create(passengerride)"
+                                ng-hide="passengerride.id">Create</button>
+                            <button class="btn btn-primary" 
+                                ng-click="update(passengerride)" 
+                                ng-show="passengerride.id">Update</button>
+                            <a href="#/passengerrides" class="btn">Cancel</a>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="span6"></div>
+</div>
+
+
