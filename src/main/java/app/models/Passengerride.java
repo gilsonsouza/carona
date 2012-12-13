@@ -19,7 +19,7 @@ public class Passengerride extends Entity {
 	private String origin;
 	private String destiny;
 	private String ridedays;
-	
+/*	
 	@ElementCollection
 	private List<Ride> rides;
 	
@@ -32,7 +32,7 @@ public class Passengerride extends Entity {
 
 	public void setRides(List<Ride> rides) {
 		this.rides = rides;
-	}
+	}*/
 
 
 	public String getOrigin() {
