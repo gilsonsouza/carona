@@ -3,7 +3,6 @@
 <html ng-app="RideModule">
 <head>
 <title></title>
-<h1>TESTE</h1>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
 <script type="text/javascript" src="/javascripts/underscore.min.js"></script>
@@ -19,12 +18,15 @@
 	<div>
 		<br />
 		<div class="span12">
-		<h1>Passageiro</h1>
-			<a href="/#/passengerrides">Teste</a>
+		<h1>Sistema de Caronas</h1>
+			<a class="btn" href="#/passengerrides">Lista rotas passageiro</a>
+		
+			<a class="btn" href="#/rides">Lista rotas motorista</a>
+			<a class="btn" href="#/riderequests">Solicitações de carona</a>
 		</div>
 		<div class="span13">
 		<h1>Motorista</h1>
-			<div ng-view><a>/rides</a></div>
+			<div ng-view></div>
 		</div>
 	</div>
 </body>
