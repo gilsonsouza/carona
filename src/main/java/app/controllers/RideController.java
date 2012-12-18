@@ -20,61 +20,68 @@ import br.com.caelum.vraptor.view.Results;
 @Resource
 public class RideController {
 
-  protected final Result result;
-  protected final RideRepository repository;
-  protected final Validator validator;
+	protected final Result result;
+	protected final RideRepository repository;
+	protected final Validator validator;
 
-  public RideController(Result result, RideRepository repository, Validator validator) {
-    this.result = result;
-    this.repository = repository;
-    this.validator = validator;
-  }
+	public RideController(Result result, RideRepository repository,
+			Validator validator) {
+		this.result = result;
+		this.repository = repository;
+		this.validator = validator;
+	}
 
-  @Get("/rides")
-  public void index() {
-    serialize(repository.findAll());
-  }
+	@Get("/rides")
+	public void index() {
+		serialize(repository.findAll());
+	}
 
-  @Post("/rides")
-  @Consumes("application/json")
-  public void create(Ride ride) {
-    validate(ride);
-    repository.create(ride);
-    result.nothing();
-  }
+	@Post("/rides")
+	@Consumes("application/json")
+	public void create(Ride ride) {
+		validate(ride);
+		repository.create(ride);
+		result.nothing();
+	}
 
-  @Put("/rides")
-  @Consumes("application/json")
-  public void update(Ride ride) {
-    validate(ride);
-    repository.update(ride);
-    result.nothing();
-  }
+	@Put("/rides")
+	@Consumes("application/json")
+	public void update(Ride ride) {
+		validate(ride);
+		repository.update(ride);
+		result.nothing();
+	}
 
-  @Get("/rides/{ride.id}")
-  public void show(Ride ride) {
-    serialize(find(ride));
-  }
+	@Get("/rides/{ride.id}")
+	public void show(Ride ride) {
+		serialize(find(ride));
+	}
 
-  @Delete("/rides/{ride.id}")
-  public void destroy(Ride ride) {
-    repository.destroy(find(ride));
-    serialize(ride);
-  }
-  
+	@Delete("/rides/{ride.id}")
+	public void destroy(Ride ride) {
+		repository.destroy(find(ride));
+		serialize(ride);
+	}
 
-  private void serialize(Object object) {
-    result.use(Results.json()).from(object).recursive().serialize();
-  }
+	@Get("/rides/filter")
+	public void filter() {
+		List<Ride> list = repository.listAllOringinAndDestiniy("rua um",
+				"rua dois");
+		serialize(list);
+	}
 
-  private Ride find(Ride ride) {
-    return repository.find(ride.getId());
-  }
+	private void serialize(Object object) {
+		result.use(Results.json()).from(object).recursive().serialize();
+	}
 
-  private void validate(Ride ride) {
-    validator.validate(ride);
-    if (validator.hasErrors()) {
-        throw new ValidationException(validator.getErrors());
-    }
-  }
+	private Ride find(Ride ride) {
+		return repository.find(ride.getId());
+	}
+
+	private void validate(Ride ride) {
+		validator.validate(ride);
+		if (validator.hasErrors()) {
+			throw new ValidationException(validator.getErrors());
+		}
+	}
 }

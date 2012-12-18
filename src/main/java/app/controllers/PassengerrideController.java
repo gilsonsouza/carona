@@ -3,6 +3,7 @@ package app.controllers;
 import java.util.List;
 
 import app.models.Passengerride;
+import app.models.Ride;
 import app.repositories.PassengerrideRepository;
 import app.repositories.RideRepository;
 import br.com.caelum.vraptor.Consumes;
@@ -21,14 +22,14 @@ public class PassengerrideController {
 
   protected final Result result;
   protected final PassengerrideRepository repository;
-  protected final RideRepository riderepository;
+  protected final RideRepository rideRepository;
 
   protected final Validator validator;
 
-  public PassengerrideController(Result result, PassengerrideRepository repository, Validator validator, RideRepository riderepository) {
+  public PassengerrideController(Result result, PassengerrideRepository repository, Validator validator, RideRepository rideRepository) {
     this.result = result;
     this.repository = repository;
-    this.riderepository = riderepository;
+    this.rideRepository = rideRepository;
     this.validator = validator;
   }
 
@@ -56,8 +57,10 @@ public class PassengerrideController {
   @Get("/passengerrides/{passengerride.id}")
   public void show(Passengerride passengerride) {
 	passengerride = find(passengerride);
+	List<Ride> rides = rideRepository.listAllOringinAndDestiniy(passengerride.getOrigin(), passengerride.getDestiny());
+	passengerride.setRides(rides);
+	
     serialize(passengerride);
-	//serialize(find(passengerride));
   }
 
   @Delete("/passengerrides/{passengerride.id}")

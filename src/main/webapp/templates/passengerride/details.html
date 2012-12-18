@@ -12,65 +12,28 @@
                 </p>
                 <br />
                             <p>
-                <b>Passageiro:</b> {{passengerride.passenger}}
+                <b>Passageiro:</b> {{passengerride.passenger}} 
                 </p>            
             <a class="btn" href="#/passengerrides">Back</a>
             <a class="btn btn-info" href="#{{passengerride.links.location.url}}/edit">Edit</a>
         </div>
     </div>
-    
     <div class="span5">
-    	<div class="well">
+    	<div class="well"  ng-repeat="ride in passengerride.rides" >
     	
     	<div class="well">
                 <div class="row-fluid">
                     <div class="span7">
-                                                    Motorista: Henrique
+                                                    Motorista: {{ride.driver}}
                             <br />
                             
                             <div class="control-group">
                             <label class="control-label" 
-                                for="ride.driver"> Valor:  R$ 0,50</label>
+                                for="ride.driver"> Valor: {{ride.price | currency}}</label>
                             
                              </div>
                     <div class="span5 controls admin">
-                    <a class="btn btn-info" href="#{{ride.links.location.url}}">Detalhes</a> <a class="btn btn-inverse" ng-click="requestRide(ride)">Pedir Carona</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="well">
-                <div class="row-fluid">
-                    <div class="span9">
-                                                    Motorista: Andrei
-                            <br />
-                            
-                            <div class="control-group">
-                            <label class="control-label" 
-                                for="ride.driver"> Valor:  R$ 1,00</label>
-                            
-                             </div>
-                    <div class="span4 controls admin">
-                        <a class="btn btn-info" href="#{{ride.links.location.url}}">Detalhes</a> <a class="btn btn-inverse" ng-click="requestRide(ride)">Pedir Carona</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="well">
-                <div class="row-fluid">
-                    <div class="span11">
-                                                    Motorista: Gilson
-                            <br />
-                            
-                            <div class="control-group">
-                            <label class="control-label" 
-                                for="ride.driver"> Valor:  R$ 2,50</label>
-                            
-                             </div>
-                    <div class="span4 controls admin">
-                        <a class="btn btn-info" href="#{{ride.links.location.url}}">Detalhes</a> <a class="btn btn-inverse" ng-click="requestRide(ride)">Pedir Carona</a>
-                        </button>
+                    <a class="btn btn-info" href="#{{ride.links.location.url}}">Detalhes</a> <a class="btn btn-inverse" ng-click="createrequest(ride, passengerride.passenger)">Pedir Carona</a>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ public class RideRequest extends Entity {
 	
 	private String driver;
 	private String passenger;
-	private Long ride;
+	private String route;
 	
 	
 
@@ -41,15 +41,15 @@ public class RideRequest extends Entity {
 
 
 
-	public Long getRide() {
-		return ride;
+	public String getRoute() {
+		return route;
 	}
 
 
 
 
-	public void setRide(Long long1) {
-		this.ride = long1;
+	public void setRoute(String route) {
+		this.route = route;
 	}
 
 

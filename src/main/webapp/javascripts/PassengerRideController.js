@@ -1,14 +1,15 @@
-
 var PassengerRideController = function($scope, $http, $location) {
-    var indexPath = '/passengerrides';
+	var indexPath = '/passengerrides';
 
 	$scope.destroy = function(resource) {
 		if (confirm("Are you sure?")) {
-			$http(resource.links.destroy).success(function() {
-				$scope.passengerrides = _.reject($scope.passengerrides, function(element) {
-					return element.id === resource.id;
-				});
-			}).error($scope.error);
+			$http(resource.links.destroy).success(
+					function() {
+						$scope.passengerrides = _.reject($scope.passengerrides,
+								function(element) {
+									return element.id === resource.id;
+								});
+					}).error($scope.error);
 		}
 	};
 
@@ -40,7 +41,18 @@ var PassengerRideController = function($scope, $http, $location) {
 			$location.path(indexPath);
 		}).error($scope.error);
 	};
+	$scope.createrequest = function(ride, passenger) {
+		var riderequest = {
+			driver : ride.driver,
+			passenger : passenger,
+			route : ride.route
+		};
 
+		$http.post("/riderequests", riderequest).success(function() {
+			alert("Requisição de carona criada!");
+		});
+
+	}
 	return $scope;
 };
 
@@ -49,7 +61,8 @@ var PassengerRideIndexController = function($scope, $http, $location) {
 	self.load();
 };
 
-var PassengerRideEditController = function($scope, $http, $routeParams, $location) {
+var PassengerRideEditController = function($scope, $http, $routeParams,
+		$location) {
 	var self = new PassengerRideController($scope, $http, $location);
 	self.get($routeParams.resourceId);
 };
@@ -58,8 +71,8 @@ var PassengerRideCreationController = function($scope, $http, $location) {
 	var self = new PassengerRideController($scope, $http, $location);
 };
 
-var PassengerRideDetailsController = function($scope, $http, $routeParams, $location) {
+var PassengerRideDetailsController = function($scope, $http, $routeParams,
+		$location) {
 	var self = new PassengerRideController($scope, $http, $location);
 	self.get($routeParams.resourceId);
 };
-

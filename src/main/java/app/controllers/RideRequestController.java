@@ -66,7 +66,7 @@ public class RideRequestController {
   public void requestRide(Ride form) {
     RideRequest request = new RideRequest();
     request.setDriver(form.getDriver());
-    request.setRide(form.getId());
+    request.setRoute(form.getRoute());
     validate(request);
     repository.create(request);
     result.nothing();
